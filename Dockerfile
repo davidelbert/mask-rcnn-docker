@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 #
 # For convenience, alias (but don't sym-link) python & pip to python3 & pip3 as recommended in:
 # http://askubuntu.com/questions/351318/changing-symlink-python-to-python3-causes-problems
-RUN apt-get install -y --no-install-recommends python3.5 python3.5-dev python3-pip python3-tk && \
+RUN apt-get install -y --no-install-recommends python3.8 python3.8-dev python3-pip python3-tk && \
     pip3 install --no-cache-dir --upgrade pip setuptools && \
     echo "alias python='python3'" >> /root/.bash_aliases && \
     echo "alias pip='pip3'" >> /root/.bash_aliases
