@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 MAINTAINER Cuda Chen <clh960524@gmail.com>
 
 ENV TEMP_MRCNN_DIR /tmp/mrcnn
@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 #
 # For convenience, alias (but don't sym-link) python & pip to python3 & pip3 as recommended in:
 # http://askubuntu.com/questions/351318/changing-symlink-python-to-python3-causes-problems
-RUN apt-get install -y --no-install-recommends python3.7 python3.7-dev python3-pip python3-tk && \
+RUN apt-get install -y --no-install-recommends python3.6 python3.6-dev python3-pip python3-tk && \
     pip3 install --no-cache-dir --upgrade pip setuptools && \
     echo "alias python='python3'" >> /root/.bash_aliases && \
     echo "alias pip='pip3'" >> /root/.bash_aliases
