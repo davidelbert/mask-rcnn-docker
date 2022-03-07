@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Cuda Chen <clh960524@gmail.com>
 
 ENV TEMP_MRCNN_DIR /tmp/mrcnn
