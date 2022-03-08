@@ -81,7 +81,7 @@ RUN pip3 install --no-cache-dir --upgrade h5py pydot_ng keras==2.2.4
 # Using a fork of the original that has a fix for Python 3.
 # I submitted a PR to the original repo (https://github.com/cocodataset/cocoapi/pull/50)
 # but it doesn't seem to be active anymore.
-RUN pip3 install --no-cache-dir git+https://github.com/cocodataset/cocoapi/tree/master/PythonAPI
+RUN pip3 install --no-cache-dir git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI
 
 #ENV TEMP_MRCNN_DIR /tmp/mrcnn
 #ENV TEMP_COCO_DIR /tmp/coco
@@ -90,7 +90,7 @@ RUN pip3 install --no-cache-dir git+https://github.com/cocodataset/cocoapi/tree/
 # NOTE: cloning my Mask R-CNN master (might be unstable HEAD)
 RUN git clone https://github.com/Cuda-Chen/Mask_RCNN.git $TEMP_MRCNN_DIR
 
-RUN git clone https://github.com/cocodataset/cocoapi $TEMP_COCO_DIR
+RUN git clone https://github.com/cocodataset/coco.git $TEMP_COCO_DIR
 
 RUN cd $TEMP_MRCNN_DIR && \
     python3 setup.py install
